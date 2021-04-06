@@ -1,0 +1,47 @@
+.headerBorder{
+    border-radius: 12px;
+    box-shadow: 0 3px 6px #00000029;
+}
+.w350{
+    width: 350px;
+}
+.borderLine{
+    border-bottom: 3px solid ;   
+}
+.borderLine2{
+    border-bottom: 1px solid #00807E;
+    border-radius:5px 5px 0 0;
+}
+.borderLine3{
+    border-bottom: 2px solid #00807E;
+    
+}
+.imgBorder{
+    border-radius:12px 12px 0 0 ;
+}
+.areaBox, .starBox{
+    position: absolute;
+    border-radius: 0 5px 5px 0px;
+    color: #FFF;
+    text-align: center;
+}
+.areaBox{
+  top: -13px;
+  left: 0;
+  font-size: 1.25rem;
+  background-color: #64C3BF;
+  padding: 12px 20px;
+}
+.starBox{
+  top: 215px;
+  left: 0;
+  background-color: #00807E;
+  padding: 5px 8px;
+  min-width: 40px;
+}
+.chartPos{
+    width: 200px;
+    height: 200px;
+    right:0;
+    top:-50px;
+}

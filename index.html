@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.18/c3.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+    <link rel="stylesheet" href="assets/style/css/all.min.css">
+    <title>第七週</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.18/c3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <header class="container my-6">
+        <section class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="headerBorder border d-flex py-5 justify-content-center mr-4">
+                    <div class="d-flex flex-column">
+                        <img src="assets/images/undraw_Traveling_re_weve (1).png" alt="" class="mb-4">
+                        <img src="assets/images/Let’s Travel !.png" alt="">
+                    </div>
+                    <div class="w350">
+                        <h4 class="text-primary borderLine mb-4 py-2"><i class="fas fa-plus-circle mr-1"></i>新增旅遊套票</h4>
+                        <ul class="list-unstyled text-primary">
+                            <li class="input-group mb-3 d-flex align-items-center">
+                                <div class="input-group-prepend">
+                                    <h6 class="mb-0">套票名稱</h6>
+                                </div>
+                                <input type="text" class="form-control ml-4 borderLine2 bg-success py-2"
+                                    placeholder="請填寫套票名稱" id="packName">
+                            </li>
+                            <li class="input-group mb-3 d-flex align-items-center">
+                                <div class="input-group-prepend">
+                                    <h6 class="mb-0">圖片網址</h6>
+                                </div>
+                                <input type="text" class="form-control ml-4 borderLine2 bg-success py-2"
+                                    placeholder="請填寫圖片網址" id="packUrl">
+                            </li>
+                            <li class="input-group mb-3 d-flex align-items-center">
+                                <div class="input-group-prepend">
+                                    <h6 class="mb-0">景點地區</h6>
+                                </div>
+                                <select class="form-control ml-4 borderLine2 bg-success py-2" id="areaOptions">
+                                    <option value="地區搜尋" disabled selected hidden>請選擇景點地區</option>
+                                    <option value="台北">台北</option>
+                                    <option value="台中">台中</option>
+                                    <option value="高雄">高雄</option>
+                                </select>
+                            </li>
+                            <li class="input-group mb-3 d-flex align-items-center">
+                                <div class="input-group-prepend">
+                                    <h6 class="mb-0">套票金額</h6>
+                                </div>
+                                <input type="number" class="form-control ml-4 borderLine2 bg-success py-2"
+                                    placeholder="請填寫套票金額" id="packMoney">
+                            </li>
+                            <li class="input-group mb-3 d-flex align-items-center">
+                                <div class="input-group-prepend">
+                                    <h6 class="mb-0">套票組數</h6>
+                                </div>
+                                <input type="number" class="form-control ml-4 borderLine2 bg-success py-2"
+                                    placeholder="請填寫套票組數" id="packNum">
+                            </li>
+                            <li class="input-group mb-3 d-flex align-items-center">
+                                <div class="input-group-prepend">
+                                    <h6 class="mb-0">套票星級</h6>
+                                </div>
+                                <input type="number" class="form-control ml-4 borderLine2 bg-success py-2"
+                                    placeholder="請填寫套票星級" id="packStar">
+                            </li>
+                            <li class="input-group mb-3">
+                                <div class="input-group-prepend pt-2">
+                                    <h6 class="mb-0">套票描述</h6>
+                                </div>
+                                <textarea class="form-control ml-4 borderLine2 bg-success py-2"
+                                    aria-label="With textarea" placeholder="請填寫套票描述（限 100 字）"
+                                    id="packTextArea"></textarea>
+                            </li>
+                        </ul>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-primary px-4 py-2" id="addData">新增套票</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </section>
+    </header>
+    <section class="bg-success py-5">
+        <div class="container position-relative">
+            <div id="chart" class="position-absolute chartPos"></div>
+            <div class="row mb-6">
+                <div class="col-1"></div>
+                <div class="input-group col-3">
+                    <select class="form-control areaSelect">
+                        <option value="" disabled selected hidden>地區搜尋</option>
+                        <option value="">全部地區</option>
+                        <option value="台北">台北</option>
+                        <option value="台中">台中</option>
+                        <option value="高雄">高雄</option>
+                    </select>
+                </div>
+                <div class="col-2 searchNum pt-2">
+                </div>
+            </div>
+            <ul class="row list-unstyled card-group justify-content-center" id="showData">
+
+            </ul>
+        </div>
+    </section>
+    <script src="assets/js/all.js"></script>
+
+</body>
+
+</html>
