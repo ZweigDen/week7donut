@@ -122,26 +122,24 @@ function clearNewData() {
 // 圓餅圖
 function donut(){
     // 紀錄目前各地區的資料數
-    let taipeiNum = 0;
-    let taichNum = 0;
-    let kaohNum = 0;
+    let areaBox = {};
+    let columnsAry=[]; 
     myData.forEach(function(item){
-        if(item.area === "台北"){
-           taipeiNum = taipeiNum+1; 
-        } else if (item.area === "台中"){
-            taichNum = taichNum+1;
-        } else if (item.area === "高雄"){
-            kaohNum = kaohNum+1;
+        if(areaBox[item.area] == undefined){
+            areaBox[item.area] = 1;
+        }else{
+            areaBox[item.area] +=1;
         }
-    })
+    });
+    // 將資料轉為陣列
+    let areaAry = Object.keys(areaBox).forEach(function(item){
+        columnsAry.push([item,areaBox[item]]);
+    });
+    console.log(columnsAry);
     let chart = c3.generate({
         bindto: '#chart',
         data: {
-          columns: [
-            ['高雄', taipeiNum],
-            ['台中', taichNum],
-            ['台北', kaohNum]
-          ],
+          columns: columnsAry,
           type:"donut",
           colors:{
               "高雄":"#E68618",
